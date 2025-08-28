@@ -1,0 +1,12 @@
+Question 1
+In multimedia systems, what is a key difference in process management compared to traditional OS?
+a) No scheduling required
+b) Timing requirements must be considered
+c) Only one process can run
+d) Graphics processing only
+
+ANSWERS
+b) Timing requirements must be considered
+
+DETAILED EXPLANATIONS
+Q1: b) Timing requirements must be considered - Multimedia data handling imposes timing requirements that traditional OS scheduling doesn't consider. Real-time processing is crucial for audio and video streams to maintain quality and avoid interruptions.

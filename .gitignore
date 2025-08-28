@@ -1,0 +1,21 @@
+# Large video files (use external hosting instead)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# System files
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+
+# Node modules (if using npm later)
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp

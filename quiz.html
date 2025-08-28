@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Quiz Creator - Interactive Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Input Section -->
+        <div id="input-section" class="input-section">
+            <h1>Quiz Creator</h1>
+            <p>Paste your questions and answers in the format provided:</p>
+            <textarea id="quiz-input" placeholder="Paste your quiz content here...
+
+Example format:
+Question 1
+What is the primary purpose of an operating system?
+a) To provide entertainment to users
+b) To act as an intermediary between user and computer hardware
+c) To replace computer hardware
+d) To create programming languages
+
+ANSWERS
+b) To act as an intermediary between user and computer hardware"></textarea>
+            <button id="generate-quiz" class="btn-primary">Generate Quiz</button>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section" class="quiz-section hidden">
+            <div class="quiz-container">
+                <div class="question-header">
+                    <span id="question-number">1.</span>
+                    <span id="question-text">What is the primary purpose of an operating system?</span>
+                </div>
+                
+                <div class="options-container">
+                    <div class="option" data-option="a">
+                        <span class="option-label">A.</span>
+                        <span class="option-text">To act as an intermediary between user and computer hardware</span>
+                    </div>
+                    <div class="option" data-option="b">
+                        <span class="option-label">B.</span>
+                        <span class="option-text">To replace computer hardware</span>
+                    </div>
+                    <div class="option" data-option="c">
+                        <span class="option-label">C.</span>
+                        <span class="option-text">To create programming languages</span>
+                    </div>
+                    <div class="option" data-option="d">
+                        <span class="option-label">D.</span>
+                        <span class="option-text">To provide entertainment to users</span>
+                    </div>
+                </div>
+
+                <div class="quiz-controls">
+                    <div class="question-counter">
+                        <span id="current-question">1</span> of <span id="total-questions">10</span>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button id="previous-question" class="btn-previous">Previous</button>
+                        <button id="next-question" class="btn-next">Next</button>
+                    </div>
+                </div>
+
+                <div id="feedback-section" class="feedback-section hidden">
+                    <div class="feedback-content">
+                        <div class="feedback-icon" id="feedback-icon">✓</div>
+                        <div class="feedback-text" id="feedback-text">Correct!</div>
+                        <div class="correct-answer" id="correct-answer-text"></div>
+                    </div>
+                </div>
+
+                <div id="explanation-section" class="explanation-section hidden">
+                    <div class="explanation-content">
+                        <h4 class="explanation-title">💡 Detailed Explanation</h4>
+                        <div class="explanation-text" id="explanation-text"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-dots">
+                    <div class="dots-container" id="dots-container">
+                        <!-- Dots will be generated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <button id="back-to-input" class="btn-secondary">Create New Quiz</button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="results-section hidden">
+            <div class="results-container">
+                <!-- Confetti Container -->
+                <div id="confetti-container"></div>
+                
+                <div class="results-header">
+                    <h1 id="results-title">Quiz Complete!</h1>
+                    <div class="time-display">
+                        <span class="time-label">⏱️ Completed in </span>
+                        <span class="time-value" id="time-taken">5:30</span>
+                    </div>
+                </div>
+
+                <div class="results-cards">
+                    <div class="results-card score-card">
+                        <div class="card-label">Score</div>
+                        <div class="card-value" id="card-score-value">9/10</div>
+                    </div>
+                    
+                    <div class="results-card accuracy-card">
+                        <div class="card-label">Accuracy</div>
+                        <div class="card-value" id="card-accuracy-value">90%</div>
+                    </div>
+                    
+                    <div class="results-card stats-card">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-label">Right</div>
+                                <div class="stat-value correct-stat" id="correct-count">9</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Wrong</div>
+                                <div class="stat-value incorrect-stat" id="incorrect-count">1</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Skipped</div>
+                                <div class="stat-value unanswered-stat" id="unanswered-count">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="retake-quiz" class="btn-primary">Retake Quiz</button>
+                    <button id="new-quiz" class="btn-secondary">Create New Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

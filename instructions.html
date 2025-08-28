@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions - Quizzy Interactive Learning Platform</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="stylesheet" href="homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="homepage-container">
+        <!-- Navigation Header -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="logo.jpg" alt="Quizzy Logo" class="logo-icon">
+                    <span class="logo-text">Quizzy</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="#video-tutorials" class="nav-link" id="video-tutorial-btn">📹 Short Video Tutorial</a>
+                    <a href="quiz.html" class="nav-btn">Create Quiz</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Instructions Section -->
+        <section id="instructions" class="instructions" style="padding-top: 8rem;">
+            <div class="section-content">
+                <h2 class="section-title">How to Create Perfect Quizzes</h2>
+                <div class="instructions-content">
+                    <div class="instruction-prompt">
+                        <div class="prompt-header">
+                            <h3>📝 AI Prompt Generator</h3>
+                            <p>Customize your prompt with topic and question count, then copy to use with your AI assistant:</p>
+                        </div>
+                        
+                        <div class="prompt-generator">
+                            <div class="generator-inputs">
+                                <div class="input-group">
+                                    <label for="topic-input">📚 Topic:</label>
+                                    <input type="text" id="topic-input" placeholder="e.g., Operating Systems, Python Programming, World History" class="topic-input">
+                                </div>
+                                <div class="input-group">
+                                    <label for="question-count">🔢 Number of Questions:</label>
+                                    <select id="question-count" class="question-select">
+                                        <option value="5">5 Questions</option>
+                                        <option value="10">10 Questions</option>
+                                        <option value="20" selected>20 Questions</option>
+                                        <option value="30">30 Questions</option>
+                                    </select>
+                                </div>
+                                <button class="generate-btn" onclick="generatePrompt()">
+                                    <span>🎯 Generate Prompt</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="prompt-box">
+                            <div class="prompt-text" id="generated-prompt">
+                                <strong>"Create a comprehensive quiz on [YOUR_TOPIC] with [NUMBER] questions using the following EXACT format:</strong><br><br>
+
+                                <strong>QUESTIONS:</strong><br>
+                                Present questions numbered as "Question 1", "Question 2", etc.<br>
+                                Each question should have 4 options labeled a), b), c), d)<br><br>
+
+                                <strong>ANSWERS:</strong><br>
+                                Create an "ANSWERS" section with ONLY the question numbers and correct letters:<br>
+                                Use this exact format: "1: b", "2: c", "3: a" (one per line)<br>
+                                DO NOT include the full answer text, just number: letter<br><br>
+
+                                <strong>DETAILED EXPLANATIONS:</strong><br>
+                                Create a "DETAILED EXPLANATIONS" section with format:<br>
+                                Q1: [brief explanation]<br>
+                                Q2: [brief explanation]<br><br>
+
+                                <strong>EXAMPLE FORMAT (DO NOT USE THIS CONTENT - CREATE YOUR OWN BASED ON THE REQUESTED TOPIC):</strong><br><br>
+
+                                Question 1<br>
+                                [Your question about the requested topic here]<br>
+                                a) [First option]<br>
+                                b) [Second option - correct answer]<br>
+                                c) [Third option]<br>
+                                d) [Fourth option]<br><br>
+
+                                Question 2<br>
+                                [Your second question about the requested topic here]<br>
+                                a) [First option]<br>
+                                b) [Second option]<br>
+                                c) [Third option - correct answer]<br>
+                                d) [Fourth option]<br><br>
+
+                                ANSWERS<br>
+                                1: b<br>
+                                2: c<br><br>
+
+                                DETAILED EXPLANATIONS<br>
+                                Q1: [Brief explanation for question 1]<br>
+                                Q2: [Brief explanation for question 2]<br><br>
+
+                                <strong>CRITICAL REQUIREMENTS:</strong><br>
+                                • Questions must be numbered as "Question 1", "Question 2", etc. (on separate lines)<br>
+                                • Options must use lowercase letters: a), b), c), d)<br>
+                                • Answers section must use format "1: b" (number colon space letter)<br>
+                                • Keep explanations brief (1-2 sentences maximum)<br>
+                                • Ensure comprehensive coverage of the topic"
+                            </div>
+                            <button class="copy-btn" onclick="copyGeneratedPrompt()">
+                                <span>📋 Copy Prompt</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="important-notice">
+                        <h3>⚠️ Important Instructions</h3>
+                        <div class="notice-content">
+                            <div class="notice-item">
+                                <div class="notice-icon">🎯</div>
+                                <div class="notice-text">
+                                    <h4>Format Compliance is Critical</h4>
+                                    <p>The quiz generator expects <strong>exact format adherence</strong>. Any deviation from the specified format may cause parsing errors or incorrect quiz behavior.</p>
+                                </div>
+                            </div>
+                            <div class="notice-item">
+                                <div class="notice-icon">🤖</div>
+                                <div class="notice-text">
+                                    <h4>AI Tool Usage Guidelines</h4>
+                                    <p>When using AI tools like <strong>Claude, ChatGPT, or Gemini</strong>: <span class="highlight">Manually copy and paste the AI's response</span> instead of using any copy buttons. This ensures proper formatting preservation.</p>
+                                </div>
+                            </div>
+                            <div class="notice-item">
+                                <div class="notice-icon">📝</div>
+                                <div class="notice-text">
+                                    <h4>Quality Assurance</h4>
+                                    <p>Always review the AI-generated content before creating your quiz to ensure accuracy and proper formatting of all sections. However don't worry we have made model in such a way that there is no chance of mistakes it is 99.99999% accurate. Happy Learning 😉</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="format-example">
+                        <h3>📋 Expected Input Format</h3>
+                        <div class="format-box">
+                            <div class="format-text">
+                                <strong>Question 1</strong><br>
+                                What is the primary purpose of an operating system?<br>
+                                a) To provide entertainment to users<br>
+                                b) To act as an intermediary between user and computer hardware<br>
+                                c) To replace computer hardware<br>
+                                d) To create programming languages<br><br>
+
+                                <strong>Question 2</strong><br>
+                                Which of the following is NOT a functionality of an operating system?<br>
+                                a) Memory Management<br>
+                                b) Processor Management<br>
+                                c) Hardware Manufacturing<br>
+                                d) Device Management<br><br>
+
+                                <strong>ANSWERS</strong><br>
+                                <span style="color: #4caf50; font-weight: bold;">1: b</span><br>
+                                <span style="color: #4caf50; font-weight: bold;">2: c</span><br><br>
+
+                                <strong>DETAILED EXPLANATIONS</strong><br>
+                                Q1: Operating systems manage hardware resources and provide interface between users and hardware components.<br>
+                                Q2: OS manages existing hardware but doesn't manufacture physical components.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="steps">
+                        <h3>🎯 Quick Steps</h3>
+                        <div class="steps-list">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Generate Content</h4>
+                                    <p>Use the AI prompt template with your study material or topic</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Copy & Paste</h4>
+                                    <p>Copy the generated quiz content and paste it into our quiz creator</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Start Learning</h4>
+                                    <p>Enjoy interactive quizzes with instant feedback and detailed explanations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Call to Action -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="quiz.html" class="btn-primary">
+                        <span>Start Creating Your Quiz</span>
+                        <span class="btn-icon">🚀</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Tutorials Section -->
+        <section id="video-tutorials" class="video-tutorials">
+            <div class="section-content">
+                <h2 class="section-title">📹 Video Tutorials</h2>
+                <p class="section-subtitle">Watch step-by-step tutorials for your preferred AI tool</p>
+                
+                <div class="video-selector">
+                    <div class="selector-buttons">
+                        <button class="ai-selector-btn active" data-ai="chatgpt">
+                            <span class="ai-icon">🤖</span>
+                            <span class="ai-name">ChatGPT Tutorial</span>
+                        </button>
+                        <button class="ai-selector-btn" data-ai="claude">
+                            <span class="ai-icon">🧠</span>
+                            <span class="ai-name">Claude Tutorial</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="video-container">
+                    <div class="video-wrapper" id="video-wrapper">
+                        <video id="tutorial-video" controls preload="none">
+                            <source src="videos/CHATGPT.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay" id="video-overlay">
+                            <div class="play-button" id="play-button">
+                                <span>▶️</span>
+                            </div>
+                            <div class="video-title" id="video-title">ChatGPT Tutorial - How to Generate Quiz Content</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="developer-section">
+                    <div class="developer-info">
+                        <h3 class="developer-title">👨‍💻 Developed by</h3>
+                        <div class="developers">
+                            <div class="developer">
+                                <span class="developer-icon">🚀</span>
+                                <span class="developer-name">Paul</span>
+                            </div>
+                            <div class="developer-separator">×</div>
+                            <div class="developer">
+                                <span class="developer-icon">⚡</span>
+                                <span class="developer-name">Saha</span>
+                            </div>
+                        </div>
+                        <div class="love-message">
+                            <span class="message-text">Crafted with passion for interactive learning</span>
+                        </div>
+                        <div class="footer-year">© 2025 Quizzy</div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="quiz.html" class="footer-link">Create Quiz</a>
+                    <a href="index.html#features" class="footer-link">Features</a>
+                    <a href="index.html" class="footer-link">Home</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="homepage.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+Question 1
+What is the primary purpose of an operating system?
+a) To provide entertainment to users
+b) To act as an intermediary between user and computer hardware
+c) To replace computer hardware
+d) To create programming languages
+Question 2
+Which of the following is NOT a functionality of an operating system?
+a) Memory Management
+b) Processor Management
+c) Hardware Manufacturing
+d) Device Management
+Question 3
+In OS design issues, what does "Transparency" refer to?
+a) Making the operating system visible to all users
+b) Multiple computers appearing as a single system to the user
+c) Showing all system processes to users
+d) Making system code readable
+Question 4
+Which characteristic makes current operating systems unreliable and insecure?
+a) They are small and simple
+b) They have excellent fault isolation
+c) They are huge and have very poor fault isolation
+d) They use minimal resources
+Question 5
+What does "Scalability" mean in the context of operating systems?
+a) The ability to reduce system size
+b) The ability to handle growing amounts of work gracefully
+c) The ability to work on small devices only
+d) The ability to reduce performance
+Question 6
+In a Monolithic OS structure, how are components organized?
+a) In strict layers
+b) As separate modules
+c) Haphazardly, where any module can call any other module
+d) In client-server architecture
+Question 7
+What is the main advantage of a Layered Operating System?
+a) Better performance than monolithic systems
+b) Makes it easier to enhance the OS by replacing entire layers
+c) Requires less memory
+d) Faster boot time
+Question 8
+Which operating system structure moves as much service functionality as possible from kernel to user space?
+a) Monolithic OS
+b) Layered OS
+c) Modular OS
+d) Micro Kernel OS
+Question 9
+What does OSAL API stand for?
+a) Operating System Application Layer Application Programming Interface
+b) OS Abstraction Layer Application Programming Interface
+c) Operating System Access Layer Application Programming Interface
+d) OS Application Security Layer Application Programming Interface
+Question 10
+What is the difference between a program and a process?
+a) Program is active, process is passive
+b) Program is passive, process is active
+c) Both are the same
+d) Program runs in kernel mode, process runs in user mode
+
+ANSWERS
+b) To act as an intermediary between user and computer hardware
+c) Hardware Manufacturing
+b) Multiple computers appearing as a single system to the user
+c) They are huge and have very poor fault isolation
+b) The ability to handle growing amounts of work gracefully
+c) Haphazardly, where any module can call any other module
+b) Makes it easier to enhance the OS by replacing entire layers
+d) Micro Kernel OS
+b) OS Abstraction Layer Application Programming Interface
+b) Program is passive, process is active

@@ -1,0 +1,30 @@
+Question 1
+Which AWS compute service is described as "function-as-a-service" (FaaS) and was launched in 2014 to reduce OS maintenance overhead?
+a) Amazon EC2
+b) AWS Lambda
+c) AWS Fargate
+d) Amazon ECS
+
+Question 2
+What does the "g" suffix in EC2 instance naming indicate?
+a) General purpose instances
+b) GPU-optimized instances
+c) Graviton processors
+d) Gigabit networking
+
+Question 3
+Which EC2 instance family is specifically optimized for high-performance computing workloads?
+a) t3.micro
+b) m5.large
+c) hpc6a.48xlarge
+d) r5.xlarge
+
+ANSWERS
+1: b
+2: c
+3: c
+
+DETAILED EXPLANATIONS
+Q1: AWS Lambda was launched in 2014 as a serverless compute service that allows you to run code without managing servers, earning it the "function-as-a-service" designation.
+Q2: The "g" suffix in EC2 instance naming indicates AWS Graviton processors, Amazon's custom-designed ARM-based processors.
+Q3: Hpc6a instances are specifically optimized for high-performance computing workloads like molecular dynamics and weather forecasting, delivering up to 100 Gbps network performance.
