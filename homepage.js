@@ -465,13 +465,13 @@ function switchVideo(aiType) {
     const videos = {
         'chatgpt': {
             // Replace YOUR_CHATGPT_VIDEO_ID with your actual YouTube video ID
-            url: 'https://www.youtube.com/embed/YOUR_CHATGPT_VIDEO_ID?autoplay=0&rel=0&modestbranding=1',
+            url: 'https://www.youtube.com/embed/E2VbktmjIuY?autoplay=0&rel=0&modestbranding=1',
             title: 'ChatGPT Tutorial - How to Generate Quiz Content',
             description: 'Learn how to use our quiz generator with ChatGPT to create engaging quizzes'
         },
         'claude': {
             // Replace YOUR_CLAUDE_VIDEO_ID with your actual YouTube video ID  
-            url: 'https://www.youtube.com/embed/YOUR_CLAUDE_VIDEO_ID?autoplay=0&rel=0&modestbranding=1',
+            url: 'https://www.youtube.com/embed/7rMp05eo--k?autoplay=0&rel=0&modestbranding=1',
             title: 'Claude Tutorial - How to Generate Quiz Content',
             description: 'Learn how to use our quiz generator with Claude AI to create interactive quizzes'
         }
