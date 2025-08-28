@@ -227,18 +227,26 @@
                 </div>
                 
                 <div class="video-container">
-                    <div class="video-wrapper" id="video-wrapper">
-                        <video id="tutorial-video" controls preload="none">
-                            <source src="videos/CHATGPT.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="video-overlay" id="video-overlay">
-                            <div class="play-button" id="play-button">
-                                <span>▶️</span>
-                            </div>
-                            <div class="video-title" id="video-title">ChatGPT Tutorial - How to Generate Quiz Content</div>
-                        </div>
+                <div class="video-container">
+                    <div id="youtube-player" class="youtube-embed">
+                        <!-- YouTube video will be embedded here -->
+                        <iframe 
+                            id="tutorial-iframe"
+                            width="100%" 
+                            height="400" 
+                            src="" 
+                            title="Tutorial Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
+                    <div class="video-info">
+                        <h4 id="video-title">ChatGPT Tutorial - How to Generate Quiz Content</h4>
+                        <p id="video-description">Learn how to use our quiz generator with ChatGPT</p>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>

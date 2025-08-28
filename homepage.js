@@ -406,14 +406,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // Video tutorial functions
 function initializeVideoTutorials() {
     const selectorButtons = document.querySelectorAll('.ai-selector-btn');
-    const video = document.getElementById('tutorial-video');
-    const videoOverlay = document.getElementById('video-overlay');
-    const playButton = document.getElementById('play-button');
+    const iframe = document.getElementById('tutorial-iframe');
     const videoTitle = document.getElementById('video-title');
     
-    if (!selectorButtons.length || !video) {
+    if (!selectorButtons.length) {
         return; // Exit if elements don't exist (not on instructions page)
     }
+    
+    // Initialize with ChatGPT video by default
+    switchVideo('chatgpt');
     
     // AI selector button click handlers
     selectorButtons.forEach(button => {
@@ -454,26 +455,39 @@ function initializeVideoTutorials() {
 }
 
 function switchVideo(aiType) {
-    const video = document.getElementById('tutorial-video');
+    const iframe = document.getElementById('tutorial-iframe');
     const videoTitle = document.getElementById('video-title');
+    const videoDescription = document.getElementById('video-description');
     
-    if (!video || !videoTitle) return;
+    if (!iframe || !videoTitle) return;
     
-    // Pause current video
-    video.pause();
+    // YouTube video configuration
+    const videos = {
+        'chatgpt': {
+            // Replace YOUR_CHATGPT_VIDEO_ID with your actual YouTube video ID
+            url: 'https://www.youtube.com/embed/YOUR_CHATGPT_VIDEO_ID?autoplay=0&rel=0&modestbranding=1',
+            title: 'ChatGPT Tutorial - How to Generate Quiz Content',
+            description: 'Learn how to use our quiz generator with ChatGPT to create engaging quizzes'
+        },
+        'claude': {
+            // Replace YOUR_CLAUDE_VIDEO_ID with your actual YouTube video ID  
+            url: 'https://www.youtube.com/embed/YOUR_CLAUDE_VIDEO_ID?autoplay=0&rel=0&modestbranding=1',
+            title: 'Claude Tutorial - How to Generate Quiz Content',
+            description: 'Learn how to use our quiz generator with Claude AI to create interactive quizzes'
+        }
+    };
     
-    // Switch video source and title based on AI type
-    if (aiType === 'chatgpt') {
-        video.src = 'videos/CHATGPT.mp4';
-        videoTitle.textContent = 'ChatGPT Tutorial - How to Generate Quiz Content';
-    } else if (aiType === 'claude') {
-        video.src = 'videos/CLAUDE.mp4';
-        videoTitle.textContent = 'Claude Tutorial - How to Generate Quiz Content';
+    const selectedVideo = videos[aiType];
+    if (selectedVideo) {
+        // Update iframe source
+        iframe.src = selectedVideo.url;
+        
+        // Update title and description
+        videoTitle.textContent = selectedVideo.title;
+        if (videoDescription) {
+            videoDescription.textContent = selectedVideo.description;
+        }
     }
-    
-    // Show overlay and reset video
-    showVideoOverlay();
-    video.load(); // Reload the video with new source
 }
 
 function playVideo() {
